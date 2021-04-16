@@ -3,8 +3,13 @@
 请求地址：https://gateway.mdex.com/v2/<br/>
 备用地址：https://gateway.mdex.cc/v2/
 
-获取不同链数据参数：<br/>
-mdex_chainid：128(HECO)、56(BSC)，默认：128
+
+```
+获取不同链数据参数：mdex_chainid = 128
+
+HECO：128（默认）
+BSC：56
+```
 
 ### 一、获取MDX代币最新流通量
 ```
@@ -75,7 +80,7 @@ GET：mdex_chainid
 |bsc_total_tvl| BSC链的总流动性质押 |
 |total_chain_tvl| 所有链的总流动性质押 |
 
-### 三、获取所有流动性挖矿池列表
+### 三、获取所有交易矿池列表
 ```
 GET：mingpool/swap
 
@@ -125,4 +130,60 @@ mdex_chainid
 |pool_quantity|当前交易额|
 |pool_rate|当前池子占比|
 |fee_refund|当前池子交易手续费返还比例|
+
+### 四、获取所有流动性矿池列表
+```
+GET：mingpool/lps
+
+参数：
+mdex_chainid
+
+返回示例：
+{
+    "result": {
+        "0": {
+            "pool_name": "WHT",
+            "pool_apy": 0,
+            "pool_tvl": 23685.934578122702,
+            "pool_rate": 0,
+            "pool_mdx": 0,
+            "address": "0x5545153ccfca01fbd7dd11c0b23ba694d9509a6f",
+            "pool_type": 1
+        },
+        "1": {
+            "base_name": "HBTC/USDT",
+            "pool_name": "HBTC/USDT",
+            "pool_apy": 0.11815463665563869,
+            "pool_tvl": 249367503.86806372,
+            "pool_rate": 10.74,
+            "pool_mdx": 81967.68,
+            "address": "0xfbe7b74623e4be82279027a286fa3a5b5280f77c",
+            "token0": "0x66a79d23e58475d2738179ca52cd0b41d73f0bea",
+            "token1": "0xa71edc38d189767582c38a3145b5873052c3e47a",
+            "pool_type": 1
+        },
+        ......
+    },
+    "code": 0,
+    "message": "Success",
+    "extra": null
+}
+```
+示例说明：
+| 字段     | 说明             |
+| -------- | ---------------- |
+|pool_id|池子ID|
+|base_name| 池子显示名称（仅限LP池）|
+|pool_name| 池子名称 |
+|pool_apy|池子收益率(天)|
+|pool_tvl|池子总质押资金|
+|pool_rate|池子权重占比|
+|address|池子单币（交易对）地址|
+|pool_type|池子类型（1普通区/2创新区)|
+|pool_mdx|MDX挖矿日产出|
+|token0|交易对第一个代币地址（仅限LP池）|
+|token1|交易对第二个代币地址（仅限LP池）|
+
+
+
 
