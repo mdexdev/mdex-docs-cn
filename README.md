@@ -8,7 +8,7 @@ mdex_chainid：128(HECO)、56(BSC)，默认：128
 
 ### 一、获取MDX代币最新流通量
 ```
-mdex/circulation
+GET：mdex/circulation
 
 参数：
 无
@@ -26,7 +26,7 @@ mdex/circulation
 mdex/charts
 
 参数：
-mdex_chainid
+GET：mdex_chainid
 
 返回示例：
 {
@@ -77,7 +77,7 @@ mdex_chainid
 
 ### 三、获取所有流动性挖矿池列表
 ```
-mingpool/swap
+GET：mingpool/swap
 
 参数：
 mdex_chainid
