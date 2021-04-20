@@ -185,5 +185,45 @@ mdex_chainid
 |token1|交易对第二个代币地址（仅限LP池）|
 
 
+### 五、获取董事会奖励池列表
+
+```
+GET：boardroom/reward/pool
+
+参数：
+mdex_chainid
+
+返回示例：
+{
+    "result": {
+        "boardroom_hmdx": {
+            "0": "{\"pool_id\":0,\"pool_name\":\"MDX\",\"amount\":\"40000\",\"total_amount\":\"275000\",\"earned_token\":\"HMDX\",\"boardroom_type\":1,\"pool_tvl\":\"6349572.6225\",\"pool_apy\":229.93673540062053,\"pool_rate\":\"25\"}",
+            "1": "{\"pool_id\":1,\"pool_name\":\"MDX/WBNB\",\"amount\":\"140000\",\"total_amount\":\"910000\",\"earned_token\":\"HMDX\",\"boardroom_type\":2,\"pool_tvl\":\"14604550.7395\",\"pool_apy\":349.8909409227993,\"pool_rate\":\"30\"}"
+        },
+        "boardroom_mdx": {
+            "0": "{\"pool_id\":0,\"pool_name\":\"HMDX/MDX\",\"amount\":\"100000\",\"total_amount\":\"670000\",\"earned_token\":\"MDX\",\"boardroom_type\":2,\"pool_tvl\":\"12395654.4578\",\"pool_apy\":294.4580306291761,\"pool_rate\":\"10\"}",
+            "1": "{\"pool_id\":1,\"pool_name\":\"MDX/USDT\",\"amount\":\"120000\",\"total_amount\":\"720000\",\"earned_token\":\"MDX\",\"boardroom_type\":2,\"pool_tvl\":\"14633240.5690\",\"pool_apy\":299.31852615665593,\"pool_rate\":\"35\"}"
+        }
+    },
+    "code": 0,
+    "message": "Success",
+    "extra": null
+}
+```
+示例说明：
+| 字段     | 说明             |
+| -------- | ---------------- |
+|boardroom_hmdx|奖励HMDX池子|
+|boardroom_mdx|奖励MDX池子|
+|pool_id|池子ID|
+|amount|奖励金额|
+|total_amount|已奖励总金额|
+|earned_token|奖励代币名称|
+|boardroom_type|池子类型(1单币/2LP)|
+|pool_tvl|池子当前TVL|
+|pool_apy|收益率|
+|pool_rate|权重比例|
+
+
 
 
