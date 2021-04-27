@@ -254,7 +254,6 @@ mdex_chainid
     "extra": null
 }
 ```
-```
 示例说明：
 | 字段     | 说明             |
 | -------- | ---------------- |
@@ -262,6 +261,3 @@ mdex_chainid
 |symbol|标识名称|
 |decimals|精度|
 |price|当前价格|
-
-
-
