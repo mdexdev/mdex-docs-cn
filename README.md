@@ -224,6 +224,44 @@ mdex_chainid
 |pool_apy|收益率|
 |pool_rate|权重比例|
 
+### 六、获取Token最新价格
+
+```
+GET：token/price
+
+参数：
+mdex_chainid
+
+返回示例：
+{
+    "result": {
+        "0x7130d2a12b9bcbfae4f2634d864a1ee1ce3ead9c": {
+            "address": "0x7130d2a12b9bcbfae4f2634d864a1ee1ce3ead9c",
+            "symbol": "BTCB",
+            "decimals": 18,
+            "price": "53920.0958381121861529025898899511160399516143"
+        },
+        "0x55d398326f99059ff775485246999027b3197955": {
+            "address": "0x55d398326f99059ff775485246999027b3197955",
+            "symbol": "USDT",
+            "decimals": 18,
+            "price": 1
+        },
+        ......
+    },
+    "code": 0,
+    "message": "Success",
+    "extra": null
+}
+```
+```
+示例说明：
+| 字段     | 说明             |
+| -------- | ---------------- |
+|address| Toekn地址|
+|symbol|标识名称|
+|decimals|精度|
+|price|当前价格|
 
 
 
