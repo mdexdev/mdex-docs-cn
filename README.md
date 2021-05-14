@@ -13,7 +13,9 @@ BSC：56
 
 ### 一、获取MDX代币最新流通量
 ```
-GET：mdex/circulation
+GET：mdex/circulation (获取所有链的总流通量)
+GET：mdex/circulation/heco (获取HECO链的流通量)
+GET：mdex/circulation/bsc (获取BSC链的总流通量)
 
 参数：
 无
