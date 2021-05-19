@@ -188,7 +188,7 @@ mdex_chainid
 
 
 
-### 五、获取流动性矿池列表
+### 五、获取流动性矿池列表(交易对LP)
 ```
 GET：mingpool/liquidity
 
@@ -238,7 +238,7 @@ mdex_chainid
 |pool_tvl|池子总质押资金|
 |pool_mdx|MDX挖矿日产出|
 
-### 六、获取单币矿池列表
+### 六、获取流动性矿池列表(单币SignleToken)
 ```
 GET：mingpool/token
 
