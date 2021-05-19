@@ -187,7 +187,102 @@ mdex_chainid
 |token1|交易对第二个代币地址（仅限LP池）|
 
 
-### 五、获取董事会奖励池列表
+
+### 五、获取流动性矿池列表
+```
+GET：mingpool/liquidity
+
+参数：
+mdex_chainid
+
+返回示例：
+{
+    "result": [
+        {
+            "pool_id": 8,
+            "base_name": "HBTC/USDT",
+            "pair": "0xfbe7b74623e4be82279027a286fa3a5b5280f77c",
+            "pair_name": "HBTC/USDT",
+            "token0": "0x66a79d23e58475d2738179ca52cd0b41d73f0bea",
+            "token0_decimal": 18,
+            "token1": "0xa71edc38d189767582c38a3145b5873052c3e47a",
+            "token1_decimal": 18,
+            "pool_type": 1,
+            "alloc_point": "997",
+            "pool_rate": 9.97,
+            "pool_apy": 0.06106480169085322,
+            "pool_tvl": 270092291.20386726,
+            "pool_mdx": 76091.04
+        },
+        ......
+    ],
+    "code": 0,
+    "message": "Success",
+    "extra": null
+}
+```
+示例说明：
+| 字段     | 说明             |
+| -------- | ---------------- |
+|pool_id|池子ID|
+|base_name| 池子显示名称（仅限LP池）|
+|pair|交易对地址|
+|pair_name| 交易对名称 |
+|token0|交易对第一个代币地址|
+|token0_decimal|第一个代币精度|
+|token1|交易对第二个代币地址|
+|token1_decimal|第二个代币精度|
+|pool_type|池子类型（1普通区/2创新区)|
+|pool_rate|池子权重占比|
+|pool_apy|池子收益率(天)|
+|pool_tvl|池子总质押资金|
+|pool_mdx|MDX挖矿日产出|
+
+### 六、获取单币矿池列表
+```
+GET：mingpool/token
+
+参数：
+mdex_chainid
+
+返回示例：
+{
+    "result": [
+        {
+            "pool_id": 0,
+            "token": "0x5545153ccfca01fbd7dd11c0b23ba694d9509a6f",
+            "name": "WHT",
+            "decimals": 18,
+            "pool_type": 1,
+            "alloc_point": "0",
+            "pool_rate": 0,
+            "pool_apy": 0,
+            "pool_tvl": 27704.75261143778,
+            "pool_mdx": 0
+        },
+        ......
+    ],
+    "code": 0,
+    "message": "Success",
+    "extra": null
+}
+```
+示例说明：
+| 字段     | 说明             |
+| -------- | ---------------- |
+|pool_id|池子ID|
+|token|代币地址|
+|name| 代币名称 |
+|decimals|代币精度|
+|pool_type|池子类型（1普通区/2创新区)|
+|pool_rate|池子权重占比|
+|pool_apy|池子收益率(天)|
+|pool_tvl|池子总质押资金|
+|pool_mdx|MDX挖矿日产出|
+
+
+
+### 七、获取董事会奖励池列表
 
 ```
 GET：boardroom/reward/pool
@@ -226,7 +321,7 @@ mdex_chainid
 |pool_apy|收益率|
 |pool_rate|权重比例|
 
-### 六、获取Token最新价格
+### 八、获取Token最新价格
 
 ```
 GET：token/price
