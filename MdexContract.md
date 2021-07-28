@@ -25,8 +25,8 @@ let token1_sol    =   erc20Contract(token1, eth_provider);
 let decimal_1     =   await token1_sol.decimals();
 
 // ***********获取MDX的价格***********
-let mdx_balance	= new BigNumber(pair_reserves['_reserve0'].toString()).div(Mqth.pow(10, decimal_0));
-let usdt_balance = new BigNumber(pair_reserves['_reserve1'].toString()).div(Mqth.pow(10, decimal_1));
+let mdx_balance	= new BigNumber(pair_reserves['_reserve0'].toString()).div(Math.pow(10, decimal_0));
+let usdt_balance = new BigNumber(pair_reserves['_reserve1'].toString()).div(Math.pow(10, decimal_1));
 let mdx_price	=	usdt_balance.div(mdx_balance).toNumber();
 
 // ***********获取交易对的TVL方式一***********
