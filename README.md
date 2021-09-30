@@ -1,7 +1,7 @@
 中文 | [English](./README-EN.md)
 
-请求地址：https://gateway.mdex.com/v2/<br/>
-备用地址：https://gateway.mdex.cc/v2/
+请求地址：https://gateway.mdex.cc/v2/<br/>
+备用地址：https://gateway.mdex.one/v2/
 
 
 ```
